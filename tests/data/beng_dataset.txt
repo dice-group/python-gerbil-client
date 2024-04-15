@@ -1,0 +1,2 @@
+When used with modification_time, indicates the time format that must be used.
+When left unspecified, it uses the current user unless you are root, in which case it can preserve the previous ownership.

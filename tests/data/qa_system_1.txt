@@ -1,0 +1,45 @@
+{
+    "dataset": {
+        "id": "qald-X"
+    },
+    "questions": [
+        {
+            "id": 0,
+            "aggregation": false,
+            "question": [
+                {
+                    "language": "en",
+                    "string": "After whom is the Riemannian geometry named?"
+                },
+                {
+                    "language": "zh",
+                    "string": "黎曼几何是以谁命名的？"
+                },
+                {
+                    "language": "de",
+                    "string": "Nach wem ist die Riemannsche Geometrie benannt?"
+                },
+                {
+                    "language": "ru",
+                    "string": "В честь кого названа риманова геометрия ?"
+                }
+            ],
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                        ]
+                    }
+                }
+            ],
+            "query": {
+                "sparql": ""
+            }
+        }
+    ]
+}
