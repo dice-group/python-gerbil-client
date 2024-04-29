@@ -1,5 +1,8 @@
-install:
-	pip install -r requirements.txt
+install: .venv
+	.venv/bin/pip install -r requirements.txt
 
 test:
-	python3 -m unittest discover tests
+	.venv/bin/python3 -m unittest discover tests
+
+.venv:
+	python3 -m venv .venv
