@@ -19,7 +19,9 @@ class GerbilBase():
             return self._upload_file(name=name, upload=data)
 
     def _upload_file(self, *, name, upload):
-        upload_name = requests.post(self.gerbil_url + 'file/upload', data={'name': name}, files=[('files', (name, upload, 'text/plain'))]).json()['files'][0]['name']
+        res = requests.post(self.gerbil_url + 'file/upload', data={'name': name}, files=[('files', (name, upload, 'text/plain'))])
+        res.raise_for_status()
+        upload_name = res.json()['files'][0]['name']
         logger.debug('Upload name: %s', upload_name)
         return upload_name
 
