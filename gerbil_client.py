@@ -30,7 +30,7 @@ class GerbilBase():
         start_time = time.monotonic_ns()
         while True:
             logger.debug('Retrieving results for experiment: %s', experiment_id)
-            r = requests.get(self.gerbil_url + 'experiment', params={'id': experiment_id}, timeout=30)
+            r = requests.get(self.gerbil_url + 'experiment', params={'id': experiment_id}, timeout=10)
             r.raise_for_status()
             bs = BeautifulSoup(r.text, 'html.parser')
             if (warn := bs.find('span', {'class': 'gerbil-experiment-warn'})) is not None:
@@ -95,7 +95,7 @@ class GerbilBase():
             **kwargs,
         )
         logger.debug('Submitting an experiment: %s', experiment_data)
-        r = requests.get(self.gerbil_url + 'execute', params={'experimentData': json.dumps(experiment_data)})
+        r = requests.get(self.gerbil_url + 'execute', params={'experimentData': json.dumps(experiment_data)}, timeout=10)
         logger.debug('Response (%s): %s', r.status_code, r.text)
         r.raise_for_status()
         return r.text
