@@ -8,4 +8,7 @@ setup(
         'bs4',
         'requests',
     ],
+    test_suite='tests',
+    tests_require=[
+    ],
 )
